@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Flight, Passenger
@@ -43,3 +44,32 @@ def book(request, flight_id):
     passengers.flights.add(flight)
     #redirecting user to another page.
     return HttpResponseRedirect(reverse("flight", args=(flight_id,)))
+
+def authenticates(request):
+    if not request.user.is_authenticated:
+        return render(request, "flights/login.html", {"message":"none"})
+    context = {
+        "user": request.user
+    }
+    return render(request, "flights/user.html", context)
+
+
+def login_view(request):
+    username= request.POST.get('username')
+    password= request.POST.get('password')
+    user= authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return HttpResponseRedirect(reverse ("authenticate"))
+    else:
+        return render(request, "flights/login.html", {"message":"Invalid credentials."})
+
+
+def logout_view(request):
+    logout(request)
+    return render(request, "flights/login.html", {"message":"Logged Out."})
+
+
+
+
+
