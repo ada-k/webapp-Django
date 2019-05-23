@@ -1,0 +1,17 @@
+{% extends "flights/base.html" %}
+
+{% block title %} 
+    Login 
+{% endblock %}
+{% block body %}
+    <h1>Log in.</h1>
+    <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <input type="text", name="username"/>
+            <input type="password", name="password"/>
+            <input type="submit", value="Login"/>
+    </form>
+
+{% endblock %} 
+ 
+  

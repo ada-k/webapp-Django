@@ -1,0 +1,23 @@
+{% extends "flights/base.html" %}
+
+{% block title %} 
+    Flights 
+{% endblock %}
+{% block body %}
+    <h1>Hello, {{ user.firstname }}</h1>
+    <ul>
+        <li>
+            Currently logged in as {{ user.username }}
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">Log Out.</a>
+        </li>
+        <li>
+            <a href="{% url 'index' %}">Check out our available flights.</a>
+        </li>
+         
+    </ul>
+
+{% endblock %} 
+ 
+  
