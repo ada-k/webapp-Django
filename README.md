@@ -6,17 +6,11 @@
 
 ### 🏠 [Homepage](https://github.com/ada-k/webapp-Django)
 
-## Install
-
-```sh
-npm install
-```
-
 ## Author
 
 👤 **Ada**
 
-* Github: [@ada-k](https://github.com/ada-k)
+- Github: [@ada-k](https://github.com/ada-k)
 
 ## 🤝 Contributing
 
@@ -26,5 +20,3 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a ⭐️ if this project helped you!
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
